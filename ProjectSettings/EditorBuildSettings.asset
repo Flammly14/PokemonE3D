@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SceneHandler.unity
+    guid: fab15a0b42ea8d643b0a5841f539b711
+  - enabled: 1
+    path: Assets/Scenes/LittleRootTown.unity
+    guid: d2f06c702aba2ea40946764b03a366c5
+  - enabled: 1
+    path: Assets/Scenes/Overworld.unity
+    guid: fd944daf8e3ffa445906808819c3033a
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: c040d066a21c5564aa70b83b03a5a7ba
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: a16f789f3445896429284fd37feb0c85, type: 2}
