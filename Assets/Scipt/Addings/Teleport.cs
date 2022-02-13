@@ -22,6 +22,7 @@ public class Teleport : MonoBehaviour
        
 
         BoxColliderTrigger = gameObject.GetComponent<BoxCollider>(); //weil OnTriggerEnter nicht tag erkennen kann oder will
+      
         if (TeppichActive.gameObject != null)
         {
             TeppichActive.SetActive(NeedTeppich);

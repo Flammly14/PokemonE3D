@@ -22,10 +22,7 @@ public class SceneController : MonoBehaviour
         {
             SceneManager.LoadSceneAsync((int)EnumSceneFolder.TitleScreen, LoadSceneMode.Additive);
             
-            for (int i = 0; i < SceneManager.sceneCount; i++)
-            {
-                Debug.Log("Loaded Scene : "+SceneManager.GetAllScenes()[i].name+"   Current Active is : "+SceneManager.GetActiveScene().name);
-            }
+       
         }
     }
 
