@@ -9,17 +9,23 @@ public class SceneController : MonoBehaviour
    public List<AsyncOperation> Scene_Loader = new List<AsyncOperation>();
     public static SceneController instance;
     Scene LastSceneWasLoaded;
+    Scene StartScene;
     public GameObject LoadingScreenPref_;
     Image Bar;
 
     private void Awake()
     {
         instance = this;
-
+        StartScene = SceneManager.GetSceneAt((int)EnumSceneFolder.SceneHandler);
 
         if (SceneManager.sceneCount <=1) //wenn zu begin die Anzahl an scenen nicht überschreitet ist das Game im TitleScreen
         {
             SceneManager.LoadSceneAsync((int)EnumSceneFolder.TitleScreen, LoadSceneMode.Additive);
+            
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                Debug.Log("Loaded Scene : "+SceneManager.GetAllScenes()[i].name+"   Current Active is : "+SceneManager.GetActiveScene().name);
+            }
         }
     }
 

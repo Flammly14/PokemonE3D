@@ -37,7 +37,7 @@ public class PokeTechController : MonoBehaviour
     }
     public void ToggleVisible(bool status)
     {
-
+        /*
         switch (true)
         {
             case true:
@@ -49,7 +49,7 @@ public class PokeTechController : MonoBehaviour
                 CanvasPTech.SetActive(false);
                 break;
         }
-
+        */
     }
 
 
