@@ -54,6 +54,7 @@ public class UIButtonShow : MonoBehaviour
         for (int i = 0; i < ButtonTriggger_.Length; i++)
         {
             ObjectIconname[i] = ButtonTriggger_[i].name;
+            
 
             switch (CurrentInputModuleActive)
             {
