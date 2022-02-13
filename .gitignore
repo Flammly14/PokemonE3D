@@ -47,6 +47,7 @@ ExportedObj/
 
 #Edited
 *.orig
+*[Pp]rojectSettings/EditorBuildSettings.asset
 
 # Unity3D generated meta files
 *.pidb.meta
