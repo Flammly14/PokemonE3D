@@ -32872,12 +32872,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
+      propertyPath: ExitScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
       propertyPath: NeedTeppich
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
       propertyPath: WohinSollEsGehn
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
+      propertyPath: WichSceneLoading
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
       propertyPath: LocalTeleportAT.x
@@ -32893,7 +32901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
       propertyPath: LocalTeleporterOnly
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5375072036492935839, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
       propertyPath: m_Name
@@ -43654,6 +43662,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
+      propertyPath: ExitScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
       propertyPath: NeedTeppich
       value: 1
       objectReference: {fileID: 0}
@@ -43667,7 +43679,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
       propertyPath: WohinSollEsGehn
-      value: 0
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
+      propertyPath: WichSceneLoading
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
       propertyPath: LocalTeleportAT.x
@@ -43683,7 +43699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
       propertyPath: LocalTeleporterOnly
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5375072036492935834, guid: 82933f9f96839c34b8ee948d9b651539, type: 3}
       propertyPath: NextSceneToLoadString

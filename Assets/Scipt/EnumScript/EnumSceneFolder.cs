@@ -18,7 +18,8 @@ public enum TeleportToVector
     RivaleHouseInside,
     ProfHouseInside,
     ________________________,
-    Overworld
+    Overworld,
+    OverworldFLY
     ///----------------------
 
 

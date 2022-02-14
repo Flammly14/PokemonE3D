@@ -8,7 +8,7 @@ public class Teleport : MonoBehaviour
     public GameObject TeppichActive;
     public GameObject PlayerFolder;
     public GameObject GameManager;
-    public bool NeedTeppich, LocalTeleporterOnly;
+    public bool NeedTeppich, LocalTeleporterOnly,ExitScene;
     private BoxCollider BoxColliderTrigger;
 
     [Header("Settings für SceneTeleport")]
@@ -33,36 +33,40 @@ public class Teleport : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Eventfinder();
-        if (BoxColliderTrigger.tag =="Player")
-        {
-            
+      if (other.gameObject.tag=="Player")
+      {
+         Eventfinder();
 
-
-
-   
-        }
-
-        if (LocalTeleporterOnly)
-        {
+            if (ExitScene)
+            {
+                Debug.Log("ExitScene("+ (int)WichSceneLoading+")  Was Triggered Teleport.cs:40");
+                
+                GameManager.GetComponent<SceneController>().UnloadScene(WichSceneLoading);
+                LocalTeleporter(other.gameObject);
+            }
+            else
+            {
+           if (LocalTeleporterOnly)
+           {
             LocalTeleporter(other.gameObject);
-        }
-        else
-        {
+          }
+          else
+          {
             GameManager.GetComponent<EnumToCords>().ChangeEnumToCords(WohinSollEsGehn.ToString());
             TeleportTo(other.gameObject);
-            TeleportAtScene = GameManager.GetComponent<EnumToCords>().TeleportToCord;
-        }
+           
+          }
+       
 
+
+            }
+      }
 
     }
     private void TeleportTo(GameObject target)
     {
         GameManager.GetComponent<SceneController>().ChangeScene(WichSceneLoading);
-        target.transform.position = TeleportAtScene;
-
-
-     //   GameManager.GetComponent<EnumToCords>().TeleportToCord;
+        target.transform.position = GameManager.GetComponent<EnumToCords>().TeleportToCord;
 
     }
 

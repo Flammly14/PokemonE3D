@@ -12,6 +12,7 @@ public class SceneController : MonoBehaviour
     Scene StartScene;
     public GameObject LoadingScreenPref_;
     Image Bar;
+  
 
     private void Awake()
     {
@@ -29,7 +30,6 @@ public class SceneController : MonoBehaviour
 
 public void LoadingGame() //muss noch für save data t werden
     {
-        
         Scene_Loader.Add(SceneManager.UnloadSceneAsync((int)EnumSceneFolder.TitleScreen));
         Scene_Loader.Add(SceneManager.LoadSceneAsync((int)EnumSceneFolder.Overworld, LoadSceneMode.Additive));
         StartCoroutine(ProgressLoader());
@@ -41,25 +41,21 @@ public void LoadingGame() //muss noch für save data t werden
 
     public void ChangeScene(EnumSceneFolder @enum) //bekommt infos was geladen werden muss 
     {
-        LastSceneWasLoaded = SceneManager.GetSceneByBuildIndex((int)@enum);
-
             Scene_Loader.Add(SceneManager.LoadSceneAsync((int)@enum, LoadSceneMode.Additive));
-
-            StartCoroutine(ProgressLoader());
-            LoadingScreenPref_.SetActive(true);
-    
-
-        
-
-       
-
-   
-
+        StartCoroutine(ProgressLoader());
+        LoadingScreenPref_.SetActive(true);
     }
-    public void UnloadToManyScene()
-    {
-     
 
+
+    public void UnloadScene(EnumSceneFolder @enum)
+    {
+        
+        Debug.Log("LastScene ("+(int)@enum+")= "+ SceneManager.GetSceneByBuildIndex((int)@enum ).name + "  Was passed ScenController.cs:48");
+       
+        Scene_Loader.Add(SceneManager.UnloadSceneAsync((int)@enum));
+
+        StartCoroutine(ProgressLoader());
+        LoadingScreenPref_.SetActive(true);
     }
 
 
@@ -96,10 +92,6 @@ public void LoadingGame() //muss noch für save data t werden
                 yield return null;
             }
         }
-
-
-
-
         LoadingScreenPref_.SetActive(false);
 
     }
