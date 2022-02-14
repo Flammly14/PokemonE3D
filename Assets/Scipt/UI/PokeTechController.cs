@@ -11,7 +11,7 @@ public class PokeTechController : MonoBehaviour
     public GameObject CanvasPTech;
     public ArrayList ArrayListPokeTech;
     public GameObject[] GameObjectsPokeTech;
-    public TextMeshProUGUI ClockText,DateText;
+    public TextMeshProUGUI ClockText, DateText;
     public EventSYSUI cih;
 
     //https://www.imore.com/pokemon-brilliant-diamond-and-shining-pearl-all-poketch-apps-and-locations //All infos about Ptech
@@ -30,7 +30,7 @@ public class PokeTechController : MonoBehaviour
     {
         CurrentPokeTechTab = CurrentPokeTechTab + 1;
 
-        if(CurrentPokeTechTab > GameObjectsPokeTech.Length)
+        if (CurrentPokeTechTab > GameObjectsPokeTech.Length)
         {
             CurrentPokeTechTab = 0;
         }
@@ -57,7 +57,7 @@ public class PokeTechController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         switch (CurrentPokeTechTab)
         {
             default:
@@ -69,9 +69,9 @@ public class PokeTechController : MonoBehaviour
                 break;
             case 1:
                 PokeTechAddon_HiddenMove();
-            break;
+                break;
             case 2:
-
+                PokeTechAddon_Calculator();
                 break;
             case 3:
 
@@ -111,6 +111,10 @@ public class PokeTechController : MonoBehaviour
         DateText.text = DateTime.UtcNow.ToString("dd/MM/yyyy");
     }
     void PokeTechAddon_HiddenMove()
+    {
+
+    }
+    void PokeTechAddon_Calculator()
     {
 
     }
