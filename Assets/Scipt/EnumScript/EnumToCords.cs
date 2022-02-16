@@ -18,7 +18,7 @@ public class EnumToCords : MonoBehaviour
                 TeleportToCord = new Vector3(-25.1060009f, -63.9199982f, 268.200989f);
                 break;
             case "ProfHouseInside":
-                TeleportToCord =new Vector3(3f,-64f,268);
+                TeleportToCord = new Vector3(17.0559998f, -68.7900009f, 275.062988f);
                 break; 
             case "Overworld":
                 TeleportToCord = Vector3.zero;

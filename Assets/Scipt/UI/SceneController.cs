@@ -41,6 +41,7 @@ public void LoadingGame() //muss noch für save data t werden
 
     public void ChangeScene(EnumSceneFolder @enum) //bekommt infos was geladen werden muss 
     {
+
             Scene_Loader.Add(SceneManager.LoadSceneAsync((int)@enum, LoadSceneMode.Additive));
         StartCoroutine(ProgressLoader());
         LoadingScreenPref_.SetActive(true);
