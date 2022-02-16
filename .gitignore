@@ -49,6 +49,11 @@ ExportedObj/
 *.orig
 *[Pp]rojectSettings/EditorBuildSettings.asset
 
+#IgnoredManyDataFolder
+*[Aa]ssets/Scenes/LittleRootTown/
+*[Aa]ssets/Scenes/Overworld/
+
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta

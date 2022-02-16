@@ -30,9 +30,10 @@ public class SceneController : MonoBehaviour
 
 public void LoadingGame() //muss noch für save data t werden
     {
+        LastSceneWasLoaded = SceneManager.GetSceneByBuildIndex((int)EnumSceneFolder.SceneHandler);
         Scene_Loader.Add(SceneManager.UnloadSceneAsync((int)EnumSceneFolder.TitleScreen));
         Scene_Loader.Add(SceneManager.LoadSceneAsync((int)EnumSceneFolder.Overworld, LoadSceneMode.Additive));
-        StartCoroutine(ProgressLoader());
+        StartCoroutine(ProgressLoader(LastSceneWasLoaded));
         LoadingScreenPref_.SetActive(true);
 
 
@@ -43,27 +44,29 @@ public void LoadingGame() //muss noch für save data t werden
     {
 
             Scene_Loader.Add(SceneManager.LoadSceneAsync((int)@enum, LoadSceneMode.Additive));
-        StartCoroutine(ProgressLoader());
+        LastSceneWasLoaded = SceneManager.GetSceneByBuildIndex((int)@enum);
+        StartCoroutine(ProgressLoader(LastSceneWasLoaded));
         LoadingScreenPref_.SetActive(true);
+     
     }
 
 
     public void UnloadScene(EnumSceneFolder @enum)
     {
         
-        Debug.Log("LastScene ("+(int)@enum+")= "+ SceneManager.GetSceneByBuildIndex((int)@enum ).name + "  Was passed ScenController.cs:48");
-       
+        Debug.Log("LastScene ("+(int)@enum+")= "+ SceneManager.GetSceneByBuildIndex((int)@enum).name  + "  Was passed SceneController.cs:48");
+         LastSceneWasLoaded = SceneManager.GetSceneByBuildIndex((int)EnumSceneFolder.Overworld);
         Scene_Loader.Add(SceneManager.UnloadSceneAsync((int)@enum));
-
-        StartCoroutine(ProgressLoader());
+        StartCoroutine(ProgressLoader(LastSceneWasLoaded));
         LoadingScreenPref_.SetActive(true);
+        
     }
 
 
 
 
     float TotalProgressFloat;
-    public IEnumerator ProgressLoader()
+    public IEnumerator ProgressLoader(Scene scene)
     {
         
         for (int i = 0; i < Scene_Loader.Count; i++)
@@ -93,6 +96,7 @@ public void LoadingGame() //muss noch für save data t werden
                 yield return null;
             }
         }
+        SceneManager.SetActiveScene(LastSceneWasLoaded);
         LoadingScreenPref_.SetActive(false);
 
     }
