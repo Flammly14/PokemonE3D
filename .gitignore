@@ -52,6 +52,7 @@ ExportedObj/
 #IgnoredManyDataFolder
 *[Aa]ssets/Scenes/LittleRootTown/
 *[Aa]ssets/Scenes/Overworld/
+*.blend1
 
 
 # Unity3D generated meta files
