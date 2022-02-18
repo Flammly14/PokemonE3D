@@ -11,13 +11,15 @@ public class SceneController : MonoBehaviour
     Scene LastSceneWasLoaded;
     Scene StartScene;
     public GameObject LoadingScreenPref_;
+    public string TeleportDestinationString = "";
     Image Bar;
-  
+    EventSYSUI cih;
 
     private void Awake()
     {
         instance = this;
         StartScene = SceneManager.GetSceneAt((int)EnumSceneFolder.SceneHandler);
+        cih= GameObject.FindGameObjectWithTag("EventSYS").GetComponent<EventSYSUI>();
 
         if (SceneManager.sceneCount <=1) //wenn zu begin die Anzahl an scenen nicht überschreitet ist das Game im TitleScreen
         {
@@ -79,6 +81,7 @@ public void LoadingGame() //muss noch für save data t werden
                 }
 
                 TotalProgressFloat = (TotalProgressFloat / Scene_Loader.Count) * 100f;
+                cih.CallsMenuOpen = true;
                
                 try
                 {
@@ -96,8 +99,11 @@ public void LoadingGame() //muss noch für save data t werden
                 yield return null;
             }
         }
+        cih.CallsMenuOpen = false;
+
         SceneManager.SetActiveScene(LastSceneWasLoaded);
         LoadingScreenPref_.SetActive(false);
+        cih.ShowDestinationUI(TeleportDestinationString);
 
     }
 

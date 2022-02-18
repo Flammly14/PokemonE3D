@@ -10,6 +10,7 @@ public class Teleport : MonoBehaviour
     public GameObject GameManager;
     public bool NeedTeppich, LocalTeleporterOnly,ExitScene;
     private BoxCollider BoxColliderTrigger;
+    public string StandortName;
 
     [Header("Settings für SceneTeleport")]
     public EnumSceneFolder WichSceneLoading;
@@ -19,7 +20,6 @@ public class Teleport : MonoBehaviour
     
     private void Awake()
     {
-       
 
         BoxColliderTrigger = gameObject.GetComponent<BoxCollider>(); //weil OnTriggerEnter nicht tag erkennen kann oder will
       
@@ -66,6 +66,7 @@ public class Teleport : MonoBehaviour
     private void TeleportTo(GameObject target)
     {
         GameManager.GetComponent<SceneController>().ChangeScene(WichSceneLoading);
+        GameManager.GetComponent<SceneController>().TeleportDestinationString = StandortName;
         target.transform.position = GameManager.GetComponent<EnumToCords>().TeleportToCord;
 
     }
@@ -74,20 +75,11 @@ public class Teleport : MonoBehaviour
 
     private void LocalTeleporter(GameObject target_)
     {
-            Debug.Log("Teleport "+target_+" Local:  "+ LocalTeleportAT);
+        GameManager.GetComponent<SceneController>().TeleportDestinationString = StandortName;
+        Debug.Log("Teleport "+target_+" Local:  "+ LocalTeleportAT);
         target_.transform.position = LocalTeleportAT;
 
     }
-
-
-
-
-
-
-
-
-
-
 
     private void Eventfinder()
     {
@@ -96,10 +88,6 @@ public class Teleport : MonoBehaviour
         GameManager = GameObject.FindGameObjectWithTag("GameManager");
 
     }
-
-
-
-
 
 }
 

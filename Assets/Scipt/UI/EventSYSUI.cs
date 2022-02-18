@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-///Alles was hier drunter ist wird genuzt c# und unity kacekn nur gerade rum 
+///Alles was hier drunter ist wird genuzt c# und unity kackt nur gerade rum 
 using TMPro;
 using UnityEngine.InputSystem;
 using Cinemachine;
@@ -12,6 +12,8 @@ public class EventSYSUI : MonoBehaviour
 {
     public bool IsInMenu;
     public GameObject OverworldOverlayCanvas;
+    public GameObject DestinationOverlay;
+    public TextMeshProUGUI DestinationOverlayText;
     public bool ESCMENUACTIVE;
     public bool CallsMenuOpen; //wenn etwas anderes das menü offen haben will
     public PlayerInput pcontrols;
@@ -24,6 +26,7 @@ public class EventSYSUI : MonoBehaviour
     public bool PokeTechEnabled; //wird von poketechcontroller dauerhaft abgefragt
     public bool  PokeTechBig;
     public EventSystem @event;
+    public string StandortName;
     // Awake+ Enable +Disable need to be there to work wit new input system
 
     private void Awake()
@@ -109,6 +112,20 @@ public class EventSYSUI : MonoBehaviour
     }
 
 
+    public void ShowDestinationUI(string CurrentDes)
+    {
+        StandortName = CurrentDes;
+        DestinationOverlayText.text = CurrentDes;
+   
+        Animation DOA = DestinationOverlay.GetComponent<Animation>();
+        DOA.Play("ShowDes");
+
+
+    }
+
+
+
+
     public void ESCMenu(bool pressed)
     {
         if (pressed)
@@ -137,6 +154,9 @@ public class EventSYSUI : MonoBehaviour
             }
         }
     }
+
+
+
 
     public void ForceSelectUIElementSYSUI(GameObject @object,bool status) /// @object ist für UI select icon sachen damit automatisch was ausgewählt wird
     {
