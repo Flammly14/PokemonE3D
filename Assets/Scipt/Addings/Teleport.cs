@@ -8,9 +8,11 @@ public class Teleport : MonoBehaviour
     public GameObject TeppichActive;
     public GameObject PlayerFolder;
     public GameObject GameManager;
-    public bool NeedTeppich, LocalTeleporterOnly,ExitScene;
+    public EventSYSUI cih;
+    public bool NeedTeppich,InsideHouse, LocalTeleporterOnly,ExitScene;
     private BoxCollider BoxColliderTrigger;
     public string StandortName;
+
 
     [Header("Settings für SceneTeleport")]
     public EnumSceneFolder WichSceneLoading;
@@ -33,7 +35,11 @@ public class Teleport : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-      if (other.gameObject.tag=="Player")
+
+        cih = GameObject.FindGameObjectWithTag("EventSYS").GetComponent<EventSYSUI>();
+
+        cih.IsInsideBuilding = InsideHouse;
+        if (other.gameObject.tag=="Player")
       {
          Eventfinder();
 

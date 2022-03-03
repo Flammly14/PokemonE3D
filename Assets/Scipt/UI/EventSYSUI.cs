@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 ///Alles was hier drunter ist wird genuzt c# und unity kackt nur gerade rum 
+///Man muss einfach nur wieder ScribtAssably neu generieren in Unity
+///Oder starte Visual Studio erst wenn Unity on ist!!!
 using TMPro;
 using UnityEngine.InputSystem;
 using Cinemachine;
@@ -25,6 +27,7 @@ public class EventSYSUI : MonoBehaviour
     CursorIconHandler cih;
     public bool PokeTechEnabled; //wird von poketechcontroller dauerhaft abgefragt
     public bool  PokeTechBig;
+    public bool IsInsideBuilding; ///Teleport.cs:41 controlliert die Variable
     public EventSystem @event;
     public string StandortName;
     // Awake+ Enable +Disable need to be there to work wit new input system
@@ -169,6 +172,14 @@ public class EventSYSUI : MonoBehaviour
             gameObject.GetComponent<EventSystem>().SetSelectedGameObject(null);
         }
         
+
+    }
+
+
+
+    public void ChangeCameraToEgo()
+    {
+
 
     }
 

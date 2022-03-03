@@ -34,10 +34,11 @@ public class TitleScreenWorker : MonoBehaviour
     }
     public void ExitGame()
     {
-        Application.CancelQuit();
-    #if UNITY_EDITOR
+        Application.Quit();
+#if UNITY_EDITOR
         Debug.Log("Quitting Game");
-    #endif
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
 

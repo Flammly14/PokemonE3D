@@ -21,15 +21,15 @@ public class EnumToCords : MonoBehaviour
         switch (EnumPos)
         {
             case "PlayerHouseInside" :
-                TeleportToCord =new Vector3(3f,-64f,268);
+                TeleportToCord =new Vector3(4.4f, -0.3f, 268.82f);
   
                 break;
                    case "RivaleHouseInside":
-                TeleportToCord = new Vector3(-25.1060009f, -63.9199982f, 268.200989f);
+                TeleportToCord = new Vector3(-23.96f, -63.9199982f, 268.8f);
         
                 break;
             case "ProfHouseInside":
-                TeleportToCord = new Vector3(17.0559998f, -68.7900009f, 275.062988f);
+                TeleportToCord = new Vector3(-23.9599991f, -0.300000012f, 268.799988f);
 
                 break; 
             case "Overworld":

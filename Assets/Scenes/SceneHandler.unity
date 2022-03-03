@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: fab15a0b42ea8d643b0a5841f539b711
+  m_OcclusionCullingData: {fileID: 36300000, guid: 000669bd1ca2c1a4fa6447063d1df263, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.087
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1718503102}
-  m_IndirectSpecularColor: {r: 0.0138352765, g: 0.045033112, b: 0.09041563, a: 0.087}
+  m_IndirectSpecularColor: {r: 0.013835276, g: 0.045033123, b: 0.09041564, a: 0.087}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadingScreenPref_: {fileID: 1478892044}
+  TeleportDestinationString: 
 --- !u!114 &696352643
 MonoBehaviour:
   m_ObjectHideFlags: 0

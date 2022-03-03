@@ -128,7 +128,7 @@ public class UIButtonShow : MonoBehaviour
         {
             DevicesList.Add(InputSystem.devices[i].displayName);
             DevicesList.Add(Gamepad.all.ToString());
-            DevicesList.Remove("UnityEngine.InputSystem.Utilities.ReadOnlyArray`1[[UnityEngine.InputSystem.Gamepad, Unity.InputSystem, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null]]"); //removed nonsense
+            DevicesList.Remove("UnityEngine.InputSystem.Utilities.ReadOnlyArray`1[[UnityEngine.InputSystem.Gamepad, Unity.InputSystem, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null]]"); ///removed nonsense
         }
    
         if (!DontWantControllerToShow)

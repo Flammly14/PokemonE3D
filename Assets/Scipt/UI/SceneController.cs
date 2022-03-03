@@ -19,7 +19,8 @@ public class SceneController : MonoBehaviour
     {
         instance = this;
         StartScene = SceneManager.GetSceneAt((int)EnumSceneFolder.SceneHandler);
-        cih= GameObject.FindGameObjectWithTag("EventSYS").GetComponent<EventSYSUI>();
+
+  
 
         if (SceneManager.sceneCount <=1) //wenn zu begin die Anzahl an scenen nicht überschreitet ist das Game im TitleScreen
         {
@@ -49,7 +50,8 @@ public void LoadingGame() //muss noch für save data t werden
         LastSceneWasLoaded = SceneManager.GetSceneByBuildIndex((int)@enum);
         StartCoroutine(ProgressLoader(LastSceneWasLoaded));
         LoadingScreenPref_.SetActive(true);
-     
+        cih = GameObject.FindGameObjectWithTag("EventSYS").GetComponent<EventSYSUI>();
+
     }
 
 
@@ -81,7 +83,7 @@ public void LoadingGame() //muss noch für save data t werden
                 }
 
                 TotalProgressFloat = (TotalProgressFloat / Scene_Loader.Count) * 100f;
-                cih.CallsMenuOpen = true;
+           
                
                 try
                 {
@@ -99,7 +101,7 @@ public void LoadingGame() //muss noch für save data t werden
                 yield return null;
             }
         }
-        cih.CallsMenuOpen = false;
+        
 
         SceneManager.SetActiveScene(LastSceneWasLoaded);
         LoadingScreenPref_.SetActive(false);
