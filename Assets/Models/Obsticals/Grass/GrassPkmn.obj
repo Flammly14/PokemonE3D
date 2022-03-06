@@ -1,6 +1,6 @@
 # Blender v3.0.1 OBJ File: 'AllModelsFileConverter2.blend'
 # www.blender.org
-mtllib AllModelsFileConverter2.mtl
+mtllib GrassPkmn.mtl
 o grass
 v -0.437500 0.000000 0.500000
 v -0.437500 0.062500 0.500000

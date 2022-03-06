@@ -101,12 +101,18 @@ public void LoadingGame() //muss noch für save data t werden
                 yield return null;
             }
         }
-        
 
+
+
+        Invoke("ShowGame", 3.0f);
+    }
+
+
+    private void ShowGame()
+    {
         SceneManager.SetActiveScene(LastSceneWasLoaded);
         LoadingScreenPref_.SetActive(false);
         cih.ShowDestinationUI(TeleportDestinationString);
-
     }
 
 }
