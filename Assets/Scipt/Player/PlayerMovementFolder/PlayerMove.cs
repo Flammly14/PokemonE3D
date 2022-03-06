@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     public Rigidbody rb;
     public float moveSpeed = 2f;
     public float RotSpeed = 2f;
+    public int sprint;
     public Vector2 VDirection = Vector2.zero;
      float RotationZ;
     public EventSYSUI cih;
@@ -16,7 +17,7 @@ public class PlayerMove : MonoBehaviour
     private Transform MC;
     public string Facing;
     public float LookAtFloat;
-  
+    public bool CanWeRun;
     
 
     private void Awake()
@@ -94,11 +95,23 @@ public class PlayerMove : MonoBehaviour
 
         if (VDirection.magnitude >= 0.1f)
         {
+            
             float targetAngle = Mathf.Atan2(VDirection.x, VDirection.y) * Mathf.Rad2Deg + MC.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(rb.transform.eulerAngles.y, targetAngle, ref RotationZ, RotSpeed);
-
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+        
+            if (pcontrols.PlayerGround.Sprint.IsPressed()&&CanWeRun==true)
+
+            {
+            
+                rb.velocity = moveDir.normalized *moveSpeed*sprint;
+
+            }
+            else
+            {
             rb.velocity = moveDir.normalized*moveSpeed;
+
+            }
 
             rb.transform.rotation = Quaternion.Euler(0f, angle, 0f);
 

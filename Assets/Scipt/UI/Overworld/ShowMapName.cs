@@ -4,61 +4,42 @@ using UnityEngine;
 
 public class ShowMapName : MonoBehaviour
 {
-    public string LocationA,LocationB;
-    public GameObject SMN_A, SMN_B;
+    public string Location;
 
 
     [Header("+++++++++++ReadOnly++++++++++")]
     public GameObject PlayerFolder;
     public GameObject GameManager;
     public EventSYSUI cih;
+    public string LocationBeforThis;
 
     private void OnTriggerEnter(Collider collision)
     {
         Eventfinder();
 
-        if (cih.StandortName == "") //fallback
-        {
-            cih.ShowDestinationUI(LocationB);
-            cih.StandortName = LocationB;
-        }
 
-        if (cih.StandortName ==LocationA)
-        {
-            cih.ShowDestinationUI(LocationB);
-            cih.StandortName = LocationB;
-        }
-        else
-        {
-            cih.ShowDestinationUI(LocationA);
-            cih.StandortName = LocationA;
-        }
+        Invoke("test", 0.2f);
 
-     
+
 
 
     }
-
-      private void Awake()
+    private void test()
     {
 
-
-#if UNITY_EDITOR
-        SMN_A.name = "(A) Current: " + LocationA;
-        SMN_B.name = "(B) Current: " + LocationB;
+        cih.ShowDestinationUI(Location);
+        cih.StandortName = Location;
 
 
-
-#endif
-  
-    
     }
+
     private void Eventfinder()
     {
         PlayerFolder = GameObject.FindGameObjectWithTag("GameController");
         cih = GameObject.FindGameObjectWithTag("EventSYS").GetComponent<EventSYSUI>();
         GameManager = GameObject.FindGameObjectWithTag("GameManager");
-
+        LocationBeforThis= cih.StandortName;
     }
-   
+
+
 }
