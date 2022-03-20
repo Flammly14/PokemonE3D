@@ -54,7 +54,7 @@ Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.as
 *[Aa]ssets/Scenes/LittleRootTown/
 *[Aa]ssets/Scenes/Overworld/
 *.blend1
-
+*[Pp]rogrammingToolsAndBlenderFiles/Tool/
 
 # Unity3D generated meta files
 *.pidb.meta
