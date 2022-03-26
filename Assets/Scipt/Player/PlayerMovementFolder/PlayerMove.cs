@@ -18,6 +18,7 @@ public class PlayerMove : MonoBehaviour
     public string Facing;
     public float LookAtFloat;
     public bool CanWeRun;
+    public Animator PlayerANIM;
     
 
     private void Awake()
@@ -93,30 +94,38 @@ public class PlayerMove : MonoBehaviour
     {
      
 
-        if (VDirection.magnitude >= 0.1f)
+        if (VDirection.magnitude >= 0.1f) //ControllerWants to Move
         {
             
             float targetAngle = Mathf.Atan2(VDirection.x, VDirection.y) * Mathf.Rad2Deg + MC.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(rb.transform.eulerAngles.y, targetAngle, ref RotationZ, RotSpeed);
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-        
-            if (pcontrols.PlayerGround.Sprint.IsPressed()&&CanWeRun==true)
-
+    
+            if (pcontrols.PlayerGround.Sprint.IsPressed()&&CanWeRun==true) /// we are Running
             {
             
                 rb.velocity = moveDir.normalized *moveSpeed*sprint;
-
+                PlayerANIM.SetBool("Walking", false);
+                PlayerANIM.SetBool("Running", true);
             }
-            else
+            else                                                                                                        ///we are Walking
             {
             rb.velocity = moveDir.normalized*moveSpeed;
-
+                PlayerANIM.SetBool("Walking", true);
+                PlayerANIM.SetBool("Running", false);
             }
 
             rb.transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
         }
-     
+        else //Idle Anim
+        {
+            PlayerANIM.SetBool("Walking", false);
+            PlayerANIM.SetBool("Running", false);
+            PlayerANIM.SetBool("T_Pose", false);
+
+        }
+
     }
 
   
