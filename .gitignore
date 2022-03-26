@@ -47,6 +47,7 @@ ExportedObj/
 
 #Edited
 *.orig
+*.meta
 *[Pp]rojectSettings/EditorBuildSettings.asset
 Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
 
