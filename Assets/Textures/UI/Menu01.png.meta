@@ -66,6 +66,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -562,6 +563,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Menu01_ExitSprite: -5019391524606824154
+      Menu01_PokeTech: 7803626681623246379
+      Menu01_StartMenuButton: 212270955384219088
+      Menu01_SliderThing: -6094552830668710287
+      Menu01_18: -817103857949656812
+      Menu01_17: -4039219283453539932
+      Menu01_BackgroundStart: -5107413957526860278
+      Menu01_Hacken: -981824101551147027
+      Menu01_PlayerCardSprite: 7131192342451410505
+      Menu01_BagSprite: 7385207657707824093
+      Menu01_SaveSprite: -2096766367505808894
+      Menu01_SettingSprite: 8915476629178577075
+      Menu01_SliderRahmen: -1991006347254400743
+      Menu01_TriggerBackground: 6046830739722679097
+      Menu01_19: -4583772260675189255
+      Menu01_PkDexSprite: -6723170887076452096
+      Menu01_PokeTech_Button: -5392973823649137138
+      Menu01_SliderNoppen: 5496869581857880939
+      Menu01_SliderInside: 7097365664012273023
+      Menu01_BallSprite: 5408434753150192228
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
