@@ -1,5 +1,5 @@
 {
-    "m_SGVersion": 2,
+    "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.GraphData",
     "m_ObjectId": "81f4e5934f5e43248c3f045b799e343e",
     "m_Properties": [
@@ -16,6 +16,12 @@
     "m_Keywords": [
         {
             "m_Id": "09370b4f49c14a0e9996235ca1d00488"
+        }
+    ],
+    "m_Dropdowns": [],
+    "m_CategoryData": [
+        {
+            "m_Id": "a0ca4c67aca347e99c487cbff66f1060"
         }
     ],
     "m_Nodes": [
@@ -296,10 +302,11 @@
         "serializedMesh": {
             "m_SerializedMesh": "{\"mesh\":{\"instanceID\":0}}",
             "m_Guid": ""
-        }
+        },
+        "preventRotation": false
     },
     "m_Path": "Shader Graphs",
-    "m_ConcretePrecision": 0,
+    "m_GraphPrecision": 0,
     "m_PreviewMode": 2,
     "m_OutputNode": {
         "m_Id": ""
@@ -444,19 +451,24 @@
 }
 
 {
-    "m_SGVersion": 0,
+    "m_SGVersion": 1,
     "m_Type": "UnityEditor.ShaderGraph.ShaderKeyword",
     "m_ObjectId": "09370b4f49c14a0e9996235ca1d00488",
     "m_Guid": {
         "m_GuidSerialized": "34f0f7c9-b1a5-47e8-a175-ffd7f1d11d66"
     },
     "m_Name": "ShouldGlow",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "BOOLEAN_09370B4F49C14A0E9996235CA1D00488_ON",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_KeywordType": 0,
     "m_KeywordDefinition": 0,
     "m_KeywordScope": 0,
+    "m_KeywordStages": 63,
     "m_Entries": [],
     "m_Value": 0,
     "m_IsEditable": true
@@ -825,17 +837,23 @@
 }
 
 {
-    "m_SGVersion": 0,
+    "m_SGVersion": 1,
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
     "m_ObjectId": "434dcd5afb9645479c894e840ab7c4a5",
     "m_ActiveSubTarget": {
         "m_Id": "09b9b2f2c7dd4897a431c9f7739ec29d"
     },
+    "m_AllowMaterialOverride": false,
     "m_SurfaceType": 1,
+    "m_ZTestMode": 4,
+    "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
-    "m_TwoSided": false,
+    "m_RenderFace": 2,
     "m_AlphaClip": false,
-    "m_CustomEditorGUI": ""
+    "m_CastShadows": true,
+    "m_ReceiveShadows": true,
+    "m_CustomEditorGUI": "",
+    "m_SupportVFX": false
 }
 
 {
@@ -1461,9 +1479,13 @@
         "m_GuidSerialized": "fd17f5a6-a76f-4eb2-aff4-763f2693b566"
     },
     "m_Name": "GlowSpeed",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_8825c78451d64dc5a0dcd10ee75fec33",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -1553,9 +1575,13 @@
         "m_GuidSerialized": "3a45bf15-cabe-4f27-a713-bf47f2f7ab47"
     },
     "m_Name": "Glow Power",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_9f5ba3049a5e4363b274f35ec865764e",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -1566,6 +1592,27 @@
         "x": 0.0,
         "y": 1.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "a0ca4c67aca347e99c487cbff66f1060",
+    "m_Name": "",
+    "m_ChildObjectList": [
+        {
+            "m_Id": "ba92591613234b3c89a83fb94ae47f5f"
+        },
+        {
+            "m_Id": "9f5ba3049a5e4363b274f35ec865764e"
+        },
+        {
+            "m_Id": "8825c78451d64dc5a0dcd10ee75fec33"
+        },
+        {
+            "m_Id": "09370b4f49c14a0e9996235ca1d00488"
+        }
+    ]
 }
 
 {
@@ -1915,9 +1962,13 @@
         "m_GuidSerialized": "a49f10f8-252f-45f3-bdb6-a74e367bd485"
     },
     "m_Name": "HighlightColor",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Color_ba92591613234b3c89a83fb94ae47f5f",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -1928,6 +1979,7 @@
         "b": 0.0,
         "a": 0.0
     },
+    "isMainColor": false,
     "m_ColorMode": 1
 }
 
